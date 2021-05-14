@@ -21,6 +21,14 @@ def index
     redirect_to sessions_path
   end
 
+  def destroy
+    @session = Session.find(params[:id])
+    @session.destroy
+
+    redirect_to sessions_path
+  end
+
+
   private
 
   def pp_params
