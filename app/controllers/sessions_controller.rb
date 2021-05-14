@@ -18,7 +18,7 @@ def index
     @session = Session.new(pp_params)
     @session.user = current_user
     @session.save
-    redirect_to profile_path
+    redirect_to sessions_path
   end
 
   private
