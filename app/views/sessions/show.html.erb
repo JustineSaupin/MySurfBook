@@ -1,7 +1,0 @@
-<h1><%= @session.title %></h1>
-<h2><%= @session.spot %></h2>
-<p><%= @session.date %></p>
-<p><%= @session.description %></p>
-<%= cl_image_tag @session.photo.key, height: 300, width: 400, crop: :fill %>
-<button><%= link_to "delete", @session, method: :delete, data: { confirm: "Wesh tè surR frer ?" } %></button>
-

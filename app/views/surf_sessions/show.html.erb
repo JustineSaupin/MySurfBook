@@ -1,0 +1,8 @@
+<h1><%= @surf_session.title %></h1>
+<h2><%= @surf_session.spot %></h2>
+<p><%= @surf_session.date %></p>
+
+<p><%= @surf_session.description %></p>
+<%= cl_image_tag @surf_session.photo.key, height: 300, width: 400, crop: :fill %>
+<button><%= link_to "delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+
