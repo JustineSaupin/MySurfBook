@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
+  before_action :set_session, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :create]
 
-def index
+  def index
     @sessions = Session.all
   end
 
   def show
-
-    @session = Session.find(params[:id])
-    @user = current_user
   end
 
   def new
@@ -16,22 +15,31 @@ def index
 
   def create
     @session = Session.new(pp_params)
-    @session.user = current_user
-    @session.save
-    redirect_to sessions_path
+    @session.user = @user
+
+    if @session.valid?
+      @session.save
+      redirect_to sessions_path
+    end
   end
 
   def destroy
-    @session = Session.find(params[:id])
     @session.destroy
-
     redirect_to sessions_path
   end
 
 
   private
 
+  def set_session
+    @session = Session.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
+  end
+
   def pp_params
-    params.require(:session).permit(:title, :spot, :description, :date)
+    params.require(:session).permit(:title, :spot, :description, :date, :photo)
   end
 end

@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :sessions, foreign_key: 'user_id'
+
+  has_one_attached :photo
 end
