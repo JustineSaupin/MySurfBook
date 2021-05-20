@@ -39,6 +39,6 @@ class SurfSessionsController < ApplicationController
   end
 
   def pp_params
-    params.require(:surf_session).permit(:title, :spot, :description, :date, :photo)
+    params.require(:surf_session).permit(:title, :spot, :description, :date, photos: [])
   end
 end

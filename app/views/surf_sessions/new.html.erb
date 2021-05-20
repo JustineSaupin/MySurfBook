@@ -4,7 +4,7 @@
   <%= f.input :spot, label:"Spot" %>
   <%= f.input :date %>
   <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, "Save", class: "btn-flat" %>
 
 <% end %>

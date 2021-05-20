@@ -1,13 +1,9 @@
 <ul>
    <% @surf_sessions.each do |surf_session| %>
     <li>
-      <%= cl_image_tag surf_session.photo.key,width: 180, height: 120, crop: :fill %>
-
+      <%= cl_image_tag surf_session.photos.first.key, height: 120, width: 200, crop: :fill %>
       <%= link_to surf_session.title, surf_session_path(surf_session)%>
-
       <%=surf_session.date%>
-      </li>
-
+    </li>
   <% end %>
 </ul>
-
