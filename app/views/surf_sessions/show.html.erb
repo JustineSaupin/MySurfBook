@@ -3,9 +3,12 @@
 <p><%= @surf_session.date %></p>
 
 <p><%= @surf_session.description %></p>
-<% @surf_session.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% if @surf_session.photos.exists? %>
+  <% @surf_session.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 <% end %>
-<button><%= link_to "delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+<button><%= link_to "Edit", edit_surf_session_path(@surf_session) %></button>
+<button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
 
 

@@ -1,0 +1,10 @@
+<%= simple_form_for(surf_session) do |f| %>
+
+  <%= f.input :title, label:"Title" %>
+  <%= f.input :spot, label:"Spot" %>
+  <%= f.input :date %>
+  <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit, "Save", class: "btn-flat" %>
+
+<% end %>

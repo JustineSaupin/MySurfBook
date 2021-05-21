@@ -1,26 +1,34 @@
 class SurfSessionsController < ApplicationController
-  before_action :set_surf_session, only: [:show, :destroy]
-  before_action :set_user, only: [:show, :create]
+  before_action :set_surf_session, except: [:index, :new, :create]
+  before_action :set_user
 
   def index
-    @surf_sessions = SurfSession.all
+    @surf_sessions = SurfSession.where(user_id: @user)
   end
 
   def show
   end
 
   def new
-    @surf_sessions = SurfSession.new
+    @surf_session = SurfSession.new
   end
 
   def create
-    @surf_session = SurfSession.new(pp_params)
+    @surf_session = SurfSession.new(ss_params)
     @surf_session.user = @user
 
     if @surf_session.valid?
       @surf_session.save
       redirect_to surf_sessions_path
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @surf_session.update(ss_params)
+    redirect_to surf_sessions_path(@surf_session)
   end
 
   def destroy
@@ -38,7 +46,7 @@ class SurfSessionsController < ApplicationController
     @user = current_user
   end
 
-  def pp_params
+  def ss_params
     params.require(:surf_session).permit(:title, :spot, :description, :date, photos: [])
   end
 end
