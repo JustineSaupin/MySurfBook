@@ -1,6 +1,14 @@
 <h1><%= @surf_session.title %></h1>
 <h2><%= @surf_session.spot %></h2>
 <p><%= @surf_session.date %></p>
+<p><% @surf_session.rating.times do |rating| %>
+  <%= image_tag "stars.svg", width:30, height:30 %>
+ <% end %></p>
+
+<label>Spot type</label>
+<%= spot_type(@surf_session.spot_type) %>
+<label>Tide</label>
+<%= tide(@surf_session.tide) %>
 
 <p><%= @surf_session.description %></p>
 <% if @surf_session.photos.exists? %>
@@ -8,7 +16,5 @@
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 <% end %>
-<button><%= link_to "Edit", edit_surf_session_path(@surf_session) %></button>
+<button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
 <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
-
-

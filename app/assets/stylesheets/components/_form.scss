@@ -1,0 +1,80 @@
+.spot-selector input {
+  margin:0;
+  padding:0;
+  appearance:none;
+}
+
+.beach {
+  background-image: url('beach.svg');
+  border-radius: 30%;
+}
+
+.reef {
+  background-image: url('reef.svg');
+  border-radius: 30%;
+}
+
+.spot-selector input:active + .spottype {
+  opacity: 1;
+}
+
+.spot-selector input:checked + .spottype{
+  filter: none;
+}
+
+.spottype {
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  width:100px;height:70px;
+  transition: all 100ms ease-in;
+  filter: opacity(.5);
+}
+
+.spottype:hover {
+  filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.tide-selector input {
+  margin:0;
+  padding:0;
+  appearance:none;
+}
+
+.high-tide {
+  background-image:url('high-tide.svg');
+  border-radius: 30%;
+}
+
+.mid-tide {
+  background-image:url('mid-tide.svg');
+  border-radius: 30%;
+}
+
+.low-tide {
+  background-image:url('low-tide.svg');
+  border-radius: 30%;
+}
+
+.tide-selector input:active + .tide {
+  opacity: 1;
+}
+
+.tide-selector input:checked + .tide {
+  filter: none;
+}
+
+.tide{
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  width:100px;height:70px;
+  transition: all 100ms ease-in;
+  filter: opacity(.5);
+}
+
+.tide:hover{
+  filter: brightness(1.2) grayscale(.5) opacity(.9);
+}

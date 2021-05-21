@@ -20,6 +20,9 @@ class SurfSessionsController < ApplicationController
     if @surf_session.valid?
       @surf_session.save
       redirect_to surf_sessions_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
 
@@ -47,6 +50,6 @@ class SurfSessionsController < ApplicationController
   end
 
   def ss_params
-    params.require(:surf_session).permit(:title, :spot, :description, :date, photos: [])
+    params.require(:surf_session).permit(:title, :spot, :description, :date, :spot_type, :tide, :rating, photos: [])
   end
 end

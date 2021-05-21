@@ -1,10 +1,39 @@
-<%= simple_form_for(surf_session) do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
 
-  <%= f.input :title, label:"Title" %>
-  <%= f.input :spot, label:"Spot" %>
-  <%= f.input :date %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, "Save", class: "btn-flat" %>
+      <%= simple_form_for(surf_session) do |f| %>
 
-<% end %>
+        <%= f.input :title, label:"Title" %>
+        <%= f.input :spot, label:"Spot" %>
+
+        <div class="spot-selector">
+          <label>Spot type</label>
+          <input id="beach" type="radio" name="surf_session[spot_type]" value="beach" <%= "checked" if surf_session.spot_type == "beach" %> />
+          <label label="surf_session[spot_type]" class="spottype beach" for="beach"></label>
+          <input id="reef" type="radio" name="surf_session[spot_type]" value="reef" <%= "checked" if surf_session.spot_type == "reef" %>/>
+          <label label="surf_session[spot_type]" class="spottype reef" for="reef"></label>
+        </div>
+
+        <div class="tide-selector">
+          <label>Tide</label>
+          <input id="high-tide" type="radio" name="surf_session[tide]" value="high-tide" <%= "checked" if surf_session.tide == "high-tide" %> />
+          <label label="surf_session[tide]" class="tide high-tide" for="high-tide"></label>
+          <input id="mid-tide" type="radio" name="surf_session[tide]" value="mid-tide" <%= "checked" if surf_session.tide == "mid-tide" %> />
+          <label label="surf_session[tide]" class="tide mid-tide"for="mid-tide"></label>
+          <input id="low-tide" type="radio" name="surf_session[tide]" value="low-tide" <%= "checked" if surf_session.tide == "low-tide" %> />
+          <label label="surf_session[tide]" class="tide low-tide"for="low-tide"></label>
+        </div>
+
+        <%= f.input :date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your sesh'" %>
+        <%= f.input :description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit, "Save", class: "btn-flat" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
