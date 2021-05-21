@@ -1,20 +1,36 @@
-<h1><%= @surf_session.title %></h1>
-<h2><%= @surf_session.spot %></h2>
-<p><%= @surf_session.date %></p>
-<p><% @surf_session.rating.times do |rating| %>
-  <%= image_tag "stars.svg", width:30, height:30 %>
- <% end %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
 
-<label>Spot type</label>
-<%= spot_type(@surf_session.spot_type) %>
-<label>Tide</label>
-<%= tide(@surf_session.tide) %>
+      <h1><%= @surf_session.title %></h1>
+      <h2><%= @surf_session.spot %></h2>
+      <div class="photos">
+        <% if @surf_session.photos.exists? %>
+          <% @surf_session.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="picto">
+        <p><% @surf_session.rating.times do |rating| %>
+        <%= image_tag "stars.svg", width:30, height:30 %>
+        <% end %></p>
 
-<p><%= @surf_session.description %></p>
-<% if @surf_session.photos.exists? %>
-  <% @surf_session.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
-<button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
-<button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+        <label>Spot type</label>
+        <%= spot_type(@surf_session.spot_type) %>
+        <label>Tide</label>
+        <%= tide(@surf_session.tide) %>
+      </div>
+
+      <p><%= @surf_session.date %></p>
+      <p><%= @surf_session.description %></p>
+
+      <div class="btn">
+      <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
+      <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+      <button> <%= link_to "Back to your sessions", surf_sessions_path %>
+      </button>
+      </div>
+   </div>
+  </div>
+</div>
