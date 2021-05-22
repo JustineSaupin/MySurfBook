@@ -50,6 +50,6 @@ class SurfSessionsController < ApplicationController
   end
 
   def ss_params
-    params.require(:surf_session).permit(:title, :spot, :description, :date, :spot_type, :tide, :rating, photos: [])
+    params.require(:surf_session).permit(:title, :spot, :description, :date, :spot_type, :tide, :wave, :wind, :rating, photos: [])
   end
 end

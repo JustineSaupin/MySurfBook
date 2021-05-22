@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_152512) do
+ActiveRecord::Schema.define(version: 2021_05_22_072815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_05_21_152512) do
     t.integer "rating"
     t.string "spot_type"
     t.string "tide"
+    t.string "wind"
+    t.string "wave"
     t.index ["user_id"], name: "index_surf_sessions_on_user_id"
   end
 

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-4 show">
 
       <h1><%= @surf_session.title %></h1>
       <h2><%= @surf_session.spot %></h2>
@@ -11,16 +11,22 @@
           <% end %>
         <% end %>
       </div>
-      <div class="picto">
-        <p><% @surf_session.rating.times do |rating| %>
-        <%= image_tag "stars.svg", width:30, height:30 %>
-        <% end %></p>
-
-        <label>Spot type</label>
-        <%= spot_type(@surf_session.spot_type) %>
-        <label>Tide</label>
-        <%= tide(@surf_session.tide) %>
+      <div class="spot-description">
+        <div class="picto">
+          <p><% @surf_session.rating.times do |rating| %>
+          <%= image_tag "stars.svg", width:30, height:30 %>
+          <% end %></p>
+          <p><%= image_tag "wave.svg", width:50, height:50 %> <%= @surf_session.wave %></p>
+        </div>
+        <div class="picto">
+          <label>Spot type</label>
+          <%= spot_type(@surf_session.spot_type) %>
+          <label>Tide</label>
+          <%= tide(@surf_session.tide) %>
+          <p><%= image_tag "wind.svg", width:50, height:50 %> <%= @surf_session.wind %></p>
+        </div>
       </div>
+
 
       <p><%= @surf_session.date %></p>
       <p><%= @surf_session.description %></p>

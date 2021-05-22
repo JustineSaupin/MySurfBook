@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://dbdzm869oupei.cloudfront.net/img/sticker/preview/25146.png" %>
+    <%= image_tag "logoMSB.png" %>
     <% end %>
 
   <h1>MySurfBook</h1>
@@ -16,7 +16,7 @@
         <li class="nav-item dropdown">
 
 
-    <%= cl_image_tag @user.photo.key, height: 40, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <%= cl_image_tag @user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

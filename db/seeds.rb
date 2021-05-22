@@ -24,13 +24,13 @@ pierre.save!
 
 
 puts "creating sessions..."
-sauveterre = SurfSession.new(title: "sauveterre on fire", date: '2021/08/10', spot: "sauveterre", description: 'Glassy, 1.5m aux séries, top !',rating: 3, user:justine)
+sauveterre = SurfSession.new(title: "sauveterre on fire", date: '2021/08/10', spot: "sauveterre", spot_type: "beach", tide: "mid-tide", description: 'Glassy, 1.5m aux séries, top !',rating: 3, user:justine)
 sauveterre.save!
 
-penhors = SurfSession.new(title: "penhors on fire", date: '2021/08/10', spot: "penhors", description: 'Glassy, 1.5m aux séries, top !',rating: 4, user:justine)
+penhors = SurfSession.new(title: "penhors on fire", date: '2021/08/10', spot: "penhors", spot_type: "beach", tide: "low-tide", description: 'Glassy, 1.5m aux séries, top !',rating: 4, user:justine)
 penhors.save!
 
-hossegor = SurfSession.new(title: "hossegor gras", date: '2021/11/10', spot: "La Nord", description: 'Fat, 3.5m aux séries, top !',rating: 4, user:pierre)
+hossegor = SurfSession.new(title: "hossegor gras", date: '2021/11/10', spot: "La Nord", spot_type: "beach", tide: "high-tide", description: 'Fat, 3.5m aux séries, top !',rating: 4, user:pierre)
 hossegor.save!
 
 puts "finished !!!"
