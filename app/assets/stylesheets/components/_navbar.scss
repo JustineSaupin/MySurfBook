@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-color: $myblue;
+  position: fixed;
+  bottom: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,5 +17,5 @@ color: $mybeige;
 }
 
 .navbar .avatar {
-  width: 80px;
+  width: 60px;
 }
