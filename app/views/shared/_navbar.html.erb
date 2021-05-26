@@ -2,8 +2,10 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logoMSB.png" %>
     <% end %>
-    <h1> <i class="far fa-hand-peace"></i> Hey <%= @user.name %> !</h1>
 
+    <%= link_to new_surf_session_path, class: "navbar-brand action-icon" do %>
+    <%= image_tag "add.png" %>
+    <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,8 +18,8 @@
         <li class="nav-item dropdown">
 
 
-    <%= cl_image_tag @user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+   <!--  <%= cl_image_tag @user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+ -->
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
