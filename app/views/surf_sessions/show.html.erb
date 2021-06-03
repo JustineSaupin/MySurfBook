@@ -7,10 +7,13 @@
       <div class="photos">
         <% if @surf_session.photos.exists? %>
           <% @surf_session.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+             <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
           <% end %>
-        <% end %>
       </div>
+
+
+
       <div class="spot-description">
         <div class="picto">
           <p><% @surf_session.rating.times do |rating| %>

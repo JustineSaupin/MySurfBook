@@ -1,8 +1,23 @@
 .topbar {
-justify-content: space-between;
-background-color: $myblue;
-color: $mybeige;
-position: fixed;
-top: 0;
-width: 100%;
+  justify-content: space-between;
+  background-color: $myblue;
+  color: $mybeige;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.topbar .avatar {
+  width: 60px;
+}
+
+.topbar h1 {
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.topbar .dropdown-item {
+  z-index: 99;
 }

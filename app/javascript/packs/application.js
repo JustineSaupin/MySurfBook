@@ -36,3 +36,4 @@ document.addEventListener('turbolinks:load', () => {
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
