@@ -1,10 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logoMSB.png" %>
-    <% end %>
+  <% end %>
 
-    <%= link_to new_surf_session_path, class: "navbar-brand action-icon" do %>
+  <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
     <%= image_tag "add.png" %>
-    <% end %>
+  <% end %>
 
+  <%= link_to root_path, class: "icon navbar-brand action-icon" do %>
+    <%= image_tag "share.png" %>
+  <% end %>
 </div>
