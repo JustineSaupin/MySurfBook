@@ -1,80 +1,50 @@
-<div class="container">
- <!--  <div class="row">
-    <div class="col-xs-4 show"> -->
+<div class="container session-container">
+  <h1><%= @surf_session.title %></h1>
+  <h2><%= @surf_session.spot %></h2>
 
-      <h1><%= @surf_session.title %></h1>
-      <h2><%= @surf_session.spot %></h2>
-
-
-
-
-      <div class="show-photos">
-
-        <% if @surf_session.photos.exists? && (@surf_session.photos.count > 1)%>
-
-       <div data-controller="carousel" class="swiper-container">
-            <% @surf_session.photos.each do |photo| %>
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <%= cl_image_tag photo.key, crop: :fill, class:"d-block w-100" %>
-                <% end %>
-              </div>
-          </div>
-          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button> -->
-        </div>
-        <% else %>
-          <% @surf_session.photos.exists? %>
+  <div class="show-photos">
+    <% if @surf_session.photos.exists? && (@surf_session.photos.count > 1) %>
+      <div data-controller="carousel" class="swiper-container">
+        <div class="swiper-wrapper">
           <% @surf_session.photos.each do |photo| %>
-             <%= cl_image_tag photo.key, crop: :fill %>
+            <div class="swiper-slide">
+              <%= cl_image_tag photo.key, crop: :fill, class:"d-block w-100" %>
+            </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
-
-<div data-controller="carousel" class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    <% elsif @surf_session.photos.exists? %>
+      <% @surf_session.photos.each do |photo| %>
+         <%= cl_image_tag photo.key, crop: :fill %>
+      <% end %>
+    <% end %>
   </div>
-</div>
 
-
-      <div class="spot-description">
-        <div class="stars">
-          <p><% @surf_session.rating.times do |rating| %>
-          <%= image_tag "stars.svg", width:30, height:30 %>
-          <% end %></p>
-        </div>
-        <div class="picto">
-          <div class="picto1">
-            <label>Info du spot</label>
-            <div> <%= spot_type(@surf_session.spot_type) %> </div>
-            <div> <%= tide(@surf_session.tide) %> </div>
-          </div>
-          <div class="picto2">
-            <p><%= image_tag "wind.svg", width:50, height:50 %> <%= @surf_session.wind %></p>
-            <p><%= image_tag "wave.svg", width:50, height:50 %> <%= @surf_session.wave %></p>
-          </div>
-        </div>
+  <div class="">
+    <div class="stars">
+      <p><% @surf_session.rating.times do |rating| %>
+      <%= image_tag "stars.svg", width:30, height:30 %>
+      <% end %></p>
+    </div>
+    <div class="picto">
+      <div class="picto1">
+        <label>Info du spot</label>
+        <div> <%= spot_type(@surf_session.spot_type) %> </div>
+        <div> <%= tide(@surf_session.tide) %> </div>
       </div>
-
-
-      <p><%= @surf_session.date %></p>
-      <p><%= @surf_session.description %></p>
-
-      <div class="btn">
-      <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
-      <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
-      <button> <%= link_to "Back to your sessions", surf_sessions_path %>
-      </button>
+      <div class="picto2">
+        <p><%= image_tag "wind.svg", width:50, height:50 %> <%= @surf_session.wind %></p>
+        <p><%= image_tag "wave.svg", width:50, height:50 %> <%= @surf_session.wave %></p>
       </div>
-   </div>
+    </div>
+  </div>
+
+  <p><%= @surf_session.date %></p>
+  <p><%= @surf_session.description %></p>
+
+  <div class="btn">
+    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
+    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+    <button> <%= link_to "Back to your sessions", surf_sessions_path %></button>
   </div>
 </div>
