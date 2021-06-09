@@ -37,3 +37,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
+// carousel
+import { carousel } from '../plugins/carousel';
+
+import 'swiper/swiper-bundle.min.css'

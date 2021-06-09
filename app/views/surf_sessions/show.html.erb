@@ -6,26 +6,28 @@
       <h2><%= @surf_session.spot %></h2>
 
 
+
+
       <div class="show-photos">
 
         <% if @surf_session.photos.exists? && (@surf_session.photos.count > 1)%>
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <% @surf_session.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, crop: :fill, class:"d-block w-100" %>
-              <% end %>
-            </div>
+       <div data-controller="carousel" class="swiper-container">
+            <% @surf_session.photos.each do |photo| %>
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <%= cl_image_tag photo.key, crop: :fill, class:"d-block w-100" %>
+                <% end %>
+              </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-          </button>
+          </button> -->
         </div>
         <% else %>
           <% @surf_session.photos.exists? %>
@@ -35,6 +37,13 @@
         <% end %>
       </div>
 
+<div data-controller="carousel" class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+</div>
 
 
       <div class="spot-description">
