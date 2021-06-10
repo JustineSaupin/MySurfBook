@@ -1,9 +1,10 @@
 .navbar {
   justify-content: space-between;
-  background-color: $myblue;
+  background-color: white;
   position: fixed;
   bottom: 0px;
   width: 100%;
+}
 
 .navbar .navbar-collapse {
   flex-grow: 0;
