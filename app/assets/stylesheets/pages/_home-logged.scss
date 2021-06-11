@@ -9,6 +9,14 @@
   text-shadow: 1px 0px 2px #bfb39b;
 }
 
+.home-banner {
+  background-image: url("../../assets/images/celsurf.jpg");
+  background-size: cover;
+  font-size: 2em;
+  padding-bottom: 80px;
+  margin: 0;
+}
+
 .session-card {
   display: flex;
   justify-content: space-between;
