@@ -1,3 +1,14 @@
+.home-logged {
+  padding: 0px 0px 120px 0px;
+  background-color: $mybeige;
+}
+
+.home-logged h2 {
+  padding: 22px;
+  color: #977049;
+  text-shadow: 1px 0px 2px #bfb39b;
+}
+
 .session-card {
   display: flex;
   justify-content: space-between;
@@ -20,3 +31,4 @@
   flex-direction: column;
   align-items: flex-end;
 }
+
