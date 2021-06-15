@@ -1,12 +1,12 @@
 <div class="home-banner">
-    <h1>My<br>Surfing<br>Log</h1>
+    <h1>MYSURF<span>LOG</span></h1>
 </div>
 
 <div class="home-logged">
-  <h2>Last sessions</h2>
-  <ul>
+  <h2><%=Time.now.strftime("%Y")%>, <%=@surf_sessions.count%> sessions so far</h2>
+
      <% @surf_sessions.each do |surf_session| %>
-      <li class="session-card">
+      <div class="session-card">
         <div class="index-photo">
           <% if surf_session.photos.any? %>
             <%= cl_image_tag surf_session.photos.first.key  %>
@@ -16,7 +16,6 @@
           <%= link_to surf_session.title, surf_session_path(surf_session)%>
           <%=surf_session.date%>
         </div>
-      </li>
+      </div>
     <% end %>
-  </ul>
 </div>

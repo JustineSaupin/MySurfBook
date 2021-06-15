@@ -1,6 +1,18 @@
 .home-logged {
-  padding: 0px 0px 120px 0px;
+  padding: 0px 8px 120px 8px;
   background-color: $mybeige;
+}
+
+.home-banner {
+  background-image: url("../../assets/images/celsurf.jpg");
+  background-size: cover;
+  font-size: 2em;
+  margin: 0;
+  height: 230px;
+}
+
+.home-banner h1 span {
+  color: #F7F6F3;
 }
 
 .home-logged h2 {
@@ -9,13 +21,6 @@
   text-shadow: 1px 0px 2px #bfb39b;
 }
 
-.home-banner {
-  background-image: url("../../assets/images/celsurf.jpg");
-  background-size: cover;
-  font-size: 2em;
-  padding-bottom: 80px;
-  margin: 0;
-}
 
 .session-card {
   display: flex;
