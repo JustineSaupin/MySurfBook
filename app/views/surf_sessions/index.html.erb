@@ -14,7 +14,7 @@
         </div>
         <div class="index-session">
           <%= link_to surf_session.title, surf_session_path(surf_session)%>
-          <%=surf_session.date%>
+          <%= link_to surf_session.date.strftime("%d/%m"), surf_session_path(surf_session) %>
         </div>
       </div>
     <% end %>
