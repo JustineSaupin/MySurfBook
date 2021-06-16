@@ -26,11 +26,11 @@
       <%= image_tag "stars.svg", width:30, height:30 %>
       <% end %></p>
     </div>
+        <h3><label>About the spot</label></h3>
     <div class="picto">
       <div class="picto1">
-        <label>Info du spot</label>
-        <div> <%= spot_type(@surf_session.spot_type) %> </div>
-        <div> <%= tide(@surf_session.tide) %> </div>
+        <div> <%= spot_type(@surf_session.spot_type) %> <%= @surf_session.spot_type %> </div>
+        <div> <%= tide(@surf_session.tide) %> <%= @surf_session.tide %> </div>
       </div>
       <div class="picto2">
         <p><%= image_tag "wind.png", width:35 %> <%= @surf_session.wind %></p>
@@ -39,12 +39,12 @@
     </div>
   </div>
 
-  <p><%= @surf_session.date %></p>
+  <p><%= @surf_session.date.strftime("%A %d %B") %></p>
   <p><%= @surf_session.description %></p>
 
   <div class="btn">
-    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %></button>
-    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
-    <button> <%= link_to "Back to your sessions", surf_sessions_path %></button>
+    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false }, class: "btn-flat" %> </button>
+    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" }, class: "btn-flat" %></button>
+    <button> <%= link_to "Back to your sessions", surf_sessions_path, class: "btn-flat" %></button>
   </div>
 </div>
