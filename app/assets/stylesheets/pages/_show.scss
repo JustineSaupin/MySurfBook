@@ -90,9 +90,46 @@
   padding: 16px;
 }
 
-.spot-description .stars {
-  position: absolute;
-  bottom: 130px;
-  right: 30px;
-  color: white;
+.stars {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.about-session {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0px 32px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+.buttons button {
+  background-color: $mygreen;
+  opacity: 0.6;
+  border-radius: 15px;
+  margin-bottom: 32px;
+  border-style: none;
+}
+
+.buttons a {
+  color: white !important;
+  text-decoration: none !important;
+  padding: 8px;
+}
+
+.buttons button:hover {
+  background-color: $mygreen;
+  opacity: 1;
+  border-style: solid 1px $mygold;
 }

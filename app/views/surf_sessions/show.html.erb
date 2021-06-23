@@ -20,7 +20,7 @@
     <% end %>
   </div>
 
-  <div class="">
+  <div class="about-spot">
     <div class="stars">
       <p><% @surf_session.rating.times do |rating| %>
       <%= image_tag "stars.svg", width:30, height:30 %>
@@ -39,12 +39,14 @@
     </div>
   </div>
 
-  <p><%= @surf_session.date.strftime("%A %d %B") %></p>
-  <p><%= @surf_session.description %></p>
+  <div class='about-session'>
+    <p><%= @surf_session.date.strftime("%A %d %B") %></p>
+    <p><%= @surf_session.description %></p>
+  </div>
 
-  <div class="btn">
-    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false }, class: "btn-flat" %> </button>
-    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" }, class: "btn-flat" %></button>
-    <button> <%= link_to "Back to your sessions", surf_sessions_path, class: "btn-flat" %></button>
+  <div class="buttons">
+    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %> </button>
+    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+    <button> <%= link_to "Back to your sessions", surf_sessions_path %></button>
   </div>
 </div>
