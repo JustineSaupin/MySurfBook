@@ -27,12 +27,13 @@
           <label label="surf_session[tide]" class="tide low-tide"for="low-tide"></label>
         </div>
 
-        <%= f.input :date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your sesh'" %>
-        <%= f.input :description %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.button :submit, "Save", class: "btn-flat" %>
-
+        <div class="info-session">
+          <%= f.input :date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your sesh'" %>
+          <%= f.input :description %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.button :submit, "Save", class: "btn-flat save" %>
+        </div>
       <% end %>
     <!-- </div> -->
  <!--  </div> -->
