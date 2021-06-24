@@ -28,7 +28,7 @@
   flex-direction: row;
   align-items: center;
   list-style-type: none;
-  padding: 10px 30px 10px 0px;
+  padding: 10px 45px 10px 15px;
 }
 
 .index-photo img {
@@ -45,6 +45,8 @@
   align-items: flex-end;
 }
 
-.index-session link {
-  background-color: red;
+.index-session a {
+  color: $myblue;
+  font-family: 'Do Hyeon', 'sans-serif';
+  font-size: 1,2em;
 }
