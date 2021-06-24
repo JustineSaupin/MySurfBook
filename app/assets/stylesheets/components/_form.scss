@@ -1,6 +1,6 @@
 .spot-selector input {
   margin:0;
-  padding:0;
+  padding: 20px;
   appearance:none;
 }
 
@@ -27,9 +27,10 @@
   background-size:contain;
   background-repeat:no-repeat;
   display:inline-block;
-  width:100px;height:70px;
+  width:80px; height:60px;
   transition: all 100ms ease-in;
   filter: opacity(.5);
+  margin-right: 18px;
 }
 
 .spottype:hover {
@@ -38,7 +39,7 @@
 
 .tide-selector input {
   margin:0;
-  padding:0;
+  padding:18px;
   appearance:none;
 }
 
@@ -70,7 +71,7 @@
   background-size:contain;
   background-repeat:no-repeat;
   display:inline-block;
-  width:100px;height:70px;
+  width:80px;height: 60px;
   transition: all 100ms ease-in;
   filter: opacity(.5);
 }
@@ -80,5 +81,31 @@
 }
 
 .container {
-  margin: 100px 0px;
+  margin: 30px 0px 130px 0;
+}
+
+label {
+  font-family: 'Do Hyeon', 'sans-serif';
+  font-size: 1,2em;
+  color: $myblue;
+}
+
+.spot-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.tide-selector {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save {
+  margin: 32px 0px;
 }
