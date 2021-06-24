@@ -3,11 +3,13 @@
     <%= image_tag "logoMSB.png" %>
   <% end %>
 
-  <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
-    <%= image_tag "add.png" %>
-  <% end %>
+  <div class="nav-action">
+    <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
+      <%= image_tag "add.png" %>
+    <% end %>
 
-  <%= link_to root_path, class: "icon navbar-brand action-icon" do %>
-    <%= image_tag "share.png" %>
-  <% end %>
+    <%= link_to root_path, class: "icon navbar-brand action-icon" do %>
+      <%= image_tag "share.png" %>
+    <% end %>
+  </div>
 </div>

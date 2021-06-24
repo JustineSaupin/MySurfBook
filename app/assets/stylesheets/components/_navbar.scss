@@ -11,15 +11,11 @@
   flex-grow: 0;
 }
 
-.navbar .navbar-brand img {
+.navbar-brand img {
   width: 80px;
 }
 .navbar h1 {
   color: $mybeige;
-}
-
-.navbar .avatar {
-  width: 60px;
 }
 
 .action-icon {
@@ -27,5 +23,9 @@
 }
 
 .navbar .icon {
+  width: 60px;
+}
+
+.nav-action img{
   width: 60px;
 }
