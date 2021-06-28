@@ -32,6 +32,11 @@
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your sesh'" %>
           <%= f.input :description %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+
+           <input type="file" name="uploadedfile" accept="image/*" capture="camera">
+
+
           <%= f.button :submit, "Save", class: "btn-flat save" %>
         </div>
       <% end %>
