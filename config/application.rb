@@ -18,7 +18,7 @@ module MySurfBook
     config.load_defaults 6.1
 
 
-    #config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = false
 
 
     # Configuration for the application, engines, and railties goes here.
