@@ -1,0 +1,20 @@
+{
+  "application.js": "/packs/js/application-77fcbe483f8cf781e572.js",
+  "application.js.map": "/packs/js/application-77fcbe483f8cf781e572.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-77fcbe483f8cf781e572.js"
+      ],
+      "js.map": [
+        "/packs/js/application-77fcbe483f8cf781e572.js.map"
+      ]
+    }
+  },
+  "media/images/beach.png": "/packs/media/images/beach-a2e65a97.png",
+  "media/images/celsurf.jpg": "/packs/media/images/celsurf-27387216.jpg",
+  "media/images/high-tide.png": "/packs/media/images/high-tide-f5e8a3a4.png",
+  "media/images/low-tide.png": "/packs/media/images/low-tide-283c8232.png",
+  "media/images/mid-tide.png": "/packs/media/images/mid-tide-137c3834.png",
+  "media/images/reef.png": "/packs/media/images/reef-674a3ac0.png"
+}
