@@ -4,6 +4,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  config.active_storage.service = :cloudinary
+
+  heroku config:set CLOUDINARY_URL=cloudinary://349753962719994:TptQRG55JlnnbIXbOyqI3rfsxD0@dtwvios6f
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
