@@ -7,8 +7,6 @@ Rails.application.configure do
 
   config.active_storage.service = :cloudinary
 
-  heroku config:set CLOUDINARY_URL=cloudinary://349753962719994:TptQRG55JlnnbIXbOyqI3rfsxD0@dtwvios6f
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
