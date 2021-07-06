@@ -3,7 +3,16 @@
 </div>
 
 <div class="home-logged">
-  <h2><%=Time.now.strftime("%Y")%>, <%=@surf_sessions.count%> sessions so far</h2>
+  <div class="home-title">
+    <h2><%=Time.now.strftime("%Y")%>, <%=@surf_sessions.count%> sessions so far</h2>
+    <h3>You surfed ... different spot !</h3>
+
+    <% @surf_sessions.each do |surf_session| %>
+      <% spots = [] %>
+      <% spots << surf_session.spot %>
+      <%= spots.flatten.count  %>
+    <% end %>
+  </div>
 
      <% @surf_sessions.each do |surf_session| %>
       <div class="session-card">
