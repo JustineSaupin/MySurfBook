@@ -15,6 +15,7 @@
         <div class="index-session">
           <%= link_to surf_session.title, surf_session_path(surf_session)%>
           <%= link_to surf_session.date.strftime("%d/%m"), surf_session_path(surf_session) %>
+          <%= link_to (image_tag "trash.png", width:"20px"), surf_session_path(surf_session), method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>
