@@ -5,13 +5,7 @@
 <div class="home-logged">
   <div class="home-title">
     <h2><%=Time.now.strftime("%Y")%>, <%=@surf_sessions.count%> sessions so far</h2>
-    <h3>You surfed ... different spot !</h3>
-
-    <% @surf_sessions.each do |surf_session| %>
-      <% spots = [] %>
-      <% spots << surf_session.spot %>
-      <%= spots.flatten.count  %>
-    <% end %>
+    <h3>and you surfed  <%= @surf_sessions.distinct.pluck(:spot).count  %> different spots!</h3>
   </div>
 
      <% @surf_sessions.each do |surf_session| %>
