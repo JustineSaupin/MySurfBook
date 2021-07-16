@@ -1,3 +1,6 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v11.0" nonce="A5KZD3zX"></script>
+
 <div class="container session-container show">
   <h1><%= @surf_session.title %></h1>
   <h2><%= @surf_session.spot %></h2>
@@ -39,10 +42,17 @@
     </div>
   </div>
 
+  <div class="fb-share-button" data-href= "<%= request.url  %>" data-layout="button"
+    data-size="large"><a target="_blank"
+    href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>%2F&amp;src=sdkpreparse"
+    class="fb-xfbml-parse-ignore">Partager</a></div>
+
   <div class='about-session'>
     <p><%= @surf_session.date.strftime("%A %d %B") %></p>
     <p><%= @surf_session.description %></p>
   </div>
+
+
 
   <div class="buttons">
     <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %> </button>
