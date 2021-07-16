@@ -111,7 +111,7 @@
 
 .buttons {
   display: flex;
-  flex-direction: row;
+  flex-direction: wrap;
   justify-content: space-around;
   align-content: center;
   margin-bottom: 130px;
@@ -135,4 +135,22 @@
 .buttons button:hover {
   background-color: $mygreen;
   opacity: 1;
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.WA {
+  background-color : #7ad06d;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  text-decoration:none;
+  font-size: 12px;
 }

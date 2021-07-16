@@ -8,8 +8,27 @@
       <%= image_tag "add.png", data: { turbolinks: false } %>
     <% end %>
 
-    <%= link_to root_path, class: "icon navbar-brand action-icon" do %>
+   <!--  <%= link_to root_path, class: "icon navbar-brand action-icon" do %>
       <%= image_tag "share.png" %>
-    <% end %>
+    <% end %> -->
+
+
+<!-- SIGN IN OR SIGN OUT-->
+<!--  <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+
+    SIGN OUT
+<%= link_to "Log out", destroy_user_session_path, method: :delete  %>
+    -->
+
+  <%= link_to (image_tag "menu.png"), root_path %>
+
+
+
+
+
   </div>
 </div>
