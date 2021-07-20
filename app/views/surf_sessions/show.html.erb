@@ -49,18 +49,6 @@
   </div>
 
 
-
-  <div class="share">
-    <div class="fb-share-button" data-href= "<%= request.url  %>" data-layout="button" data-size="large">
-      <a target="_blank"
-      href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>%2F&amp;src=sdkpreparse"
-      class="fb-xfbml-parse-ignore">Share on FB</a>
-    </div>
-
-    <a class="WA" href="whatsapp://send?text=<%= request.url %>">WhatsApp</a>
-
-  </div>
-
   <div class="buttons">
     <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %> </button>
     <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
