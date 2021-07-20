@@ -24,9 +24,25 @@
 <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
     -->
 
-  <%= link_to (image_tag "menu.png"), root_path %>
+
+      <%= image_tag "menu.png", class: "nav-menu" %>
+      <div class="show-menu"></div>
+
+        <script>
+
+          let menu = document.querySelector('.nav-menu');
+
+          function showMenu() {
+            console.log("it's on");
+            document.querySelector('.show-menu').innerHTML =
+            '<%= link_to "Log out", destroy_user_session_path, method: :delete  %>';
+
+          };
+
+          menu.addEventListener('click', showMenu);
 
 
+        </script>
 
 
 
