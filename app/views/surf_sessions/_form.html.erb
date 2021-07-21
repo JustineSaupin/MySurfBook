@@ -4,7 +4,7 @@
  -->
       <%= simple_form_for(surf_session) do |f| %>
 
-        <%= f.input :title, label:"Title" %>
+        <h3><%= @current_user.name.capitalize  %></h3>
         <%= f.input :spot, label:"Spot" %>
         <%= f.input :wind, label:"Wind direction" %>
         <%= f.input :wave, label:"Waves" %>
