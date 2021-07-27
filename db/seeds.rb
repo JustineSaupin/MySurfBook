@@ -12,7 +12,7 @@ SurfSession.destroy_all
 User.destroy_all
 
 puts "creating users..."
-justine = User.new(email: 'justine@mail.com', password: '123321', name: 'justine')
+justine = User.new(email: 'justine@mail.com', password: '123321', name: 'justine' )
 file = File.open(Rails.root.join('db/seeds/img_users/justine.jpg'))
 justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpeg')
 justine.save!
@@ -32,5 +32,6 @@ penhors.save!
 
 hossegor = SurfSession.new(title: "hossegor gras", date: '2021/11/10', spot: "La Nord", spot_type: "beach", tide: "high-tide", description: 'Fat, 3.5m aux séries, top !',rating: 4, user:pierre)
 hossegor.save!
+
 
 puts "finished !!!"

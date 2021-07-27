@@ -8,6 +8,8 @@
     <h3>and you surfed  <%= @surf_sessions.distinct.pluck(:spot).count  %> different spots!</h3>
   </div>
 
+
+
      <% @surf_sessions.each do |surf_session| %>
       <div class="session-card">
         <div class="index-photo">
@@ -22,4 +24,5 @@
         </div>
       </div>
     <% end %>
+
 </div>
