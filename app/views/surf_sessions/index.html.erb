@@ -25,4 +25,9 @@
       </div>
     <% end %>
 
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.name %>
+<% end %>
+
 </div>
