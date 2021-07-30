@@ -11,6 +11,7 @@ class SurfSessionsController < ApplicationController
 
   def new
     @surf_session = SurfSession.new
+    @surf_sessions = SurfSession.where(user_id: @user)
   end
 
   def create

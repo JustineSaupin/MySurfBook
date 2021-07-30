@@ -3,7 +3,7 @@
    <!--  <div class="col-xs-1">
  -->
       <%= simple_form_for(surf_session) do |f| %>
-        <% @surf_sessions = SurfSession.all %>
+
         <h3><%= @current_user.name.capitalize %> - Session number <%= @surf_sessions.count + 1 %></h3>
         <%= f.input :spot, label:"Spot" %>
         <%= f.input :wind, label:"Wind direction" %>

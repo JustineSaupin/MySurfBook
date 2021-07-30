@@ -44,3 +44,6 @@ initStarRating();
 import { carousel } from '../plugins/carousel';
 
 import 'swiper/swiper-bundle.min.css'
+
+// navbar
+import { navbar } from '../plugins/navbar';

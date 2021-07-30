@@ -12,7 +12,9 @@
     <%if current_page?(root_path) %>
     <%= image_tag "menu.png", class: "nav-menu" %>
     <div class="show-menu"></div>
-
+    <!-- <script>
+      showMenu()
+    </script> -->
       <script>
       let menu = document.querySelector('.nav-menu');
 
@@ -22,7 +24,14 @@
         '<%= link_to "Log out", destroy_user_session_path, method: :delete  %>';
     };
 
+     function hideMenu() {
+        console.log("menu hide");
+        document.querySelector('.show-menu').innerHTML ='';
+    };
+
       menu.addEventListener('click', showMenu);
+      menu.addEventListener('click', hideMenu);
+
     </script>
 
     <!--  SI PAGE ACTUEL == NEW -> LOGO back-->
