@@ -25,6 +25,19 @@
       </div>
     <% end %>
 
-  <%= @users %>
+
+  <div class="follow-friends">
+    <h3> You may know this champs' ?</h3>
+      <% @users.each do |user| %>
+      <%  unless user === @current_user %>
+      <ul class="friend">
+        <div class="avatar">
+          <%= cl_image_tag user.photo.key %>
+        </div>
+          <button class="btn">Follow <%= user.name %></button>
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
 
 </div>
