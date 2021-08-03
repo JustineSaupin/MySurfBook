@@ -22,7 +22,7 @@ text-align: center;
   padding: 22px;
 }
 
-input.btn {
+.btn {
   width: 100%;
   background-color: $mygold;
   opacity: 0.8;
@@ -31,7 +31,7 @@ input.btn {
   margin-bottom: 32px;
   }
 
-input.btn:hover {
+.btn:hover {
   opacity: 1;
   border-radius: 15px;
   color: white;
