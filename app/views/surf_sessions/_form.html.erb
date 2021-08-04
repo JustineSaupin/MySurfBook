@@ -4,7 +4,7 @@
  -->
       <%= simple_form_for(surf_session) do |f| %>
      <!--  how to access to current user name ??
-      <%= @current_user.name.capitalize %> - -->
+      < @current_user.name.capitalize %> - -->
         <h3> Session number <%= @surf_sessions.count + 1 %></h3>
         <%= f.input :spot, label:"Spot" %>
         <%= f.input :wind, label:"Wind direction" %>
