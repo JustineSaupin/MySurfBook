@@ -1,5 +1,5 @@
 .home-logged {
-  padding: 0px 8px 120px 8px;
+  padding: 8px 32px 120px 32px;
   background-color: $mybeige;
 }
 
@@ -38,7 +38,7 @@
   flex-direction: row;
   align-items: center;
   list-style-type: none;
-  padding: 10px 45px 10px 15px;
+  padding-top: 10px;
 }
 
 .index-photo img {
@@ -60,3 +60,35 @@
   font-family: 'Do Hyeon', 'sans-serif';
   font-size: 1,2em;
 }
+
+.follow-friends {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.follow-friends h3 {
+  font-size: 1.25rem !important;
+  color: $myblue;
+}
+
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.friend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+

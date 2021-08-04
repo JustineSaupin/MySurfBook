@@ -4,6 +4,7 @@ class SurfSessionsController < ApplicationController
 
   def index
     @surf_sessions = SurfSession.where(user_id: @user)
+    @users = User.all
   end
 
   def show
@@ -11,6 +12,7 @@ class SurfSessionsController < ApplicationController
 
   def new
     @surf_session = SurfSession.new
+    @surf_sessions = SurfSession.where(user_id: @user)
   end
 
   def create

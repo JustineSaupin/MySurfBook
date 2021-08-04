@@ -11,10 +11,10 @@
    <!--  SI PAGE ACTUEL == INDEX -> LOGO menu-->
     <%if current_page?(root_path) %>
     <%= image_tag "menu.png", class: "nav-menu" %>
+
     <div class="show-menu">
       <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
     </div>
-
 
 
     <!--  SI PAGE ACTUEL == NEW -> LOGO back-->

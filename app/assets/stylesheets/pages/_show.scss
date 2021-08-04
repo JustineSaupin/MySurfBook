@@ -1,4 +1,5 @@
 .session-container {
+  padding: 32px 32px 120px 32px;
   background-color: $mybeige;
 }
 
@@ -6,7 +7,6 @@
   display: flex;
   justify-content: center;
   font-size: 2.2em;
-  padding: 22px;
   color: #977049;
   text-shadow: 1px 0px 2px #bfb39b;
 }
@@ -68,7 +68,6 @@
 .picto {
   display: flex;
   flex-direction: row;
-  padding: 16px;
 }
 
 .picto p {
@@ -81,7 +80,7 @@
   align-content: space-around;
   align-items: stretch;
   justify-content: flex-start;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .picto2 {
@@ -90,7 +89,7 @@
   align-content: space-around;
   align-items: stretch;
   justify-content: flex-start;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .stars {
@@ -105,7 +104,6 @@
   align-content: center;
   justify-content: center;
   align-items: stretch;
-  padding: 0px 32px;
 }
 
 .buttons {
@@ -113,7 +111,6 @@
   flex-direction: wrap;
   justify-content: space-around;
   align-content: center;
-  margin-bottom: 130px;
 }
 
 .buttons button {

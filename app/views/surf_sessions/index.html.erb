@@ -8,6 +8,8 @@
     <h3>and you surfed  <%= @surf_sessions.distinct.pluck(:spot).count  %> different spots!</h3>
   </div>
 
+
+
      <% @surf_sessions.each do |surf_session| %>
       <div class="session-card">
         <div class="index-photo">
@@ -22,4 +24,26 @@
         </div>
       </div>
     <% end %>
+
+
+  <div class="follow-friends">
+    <h3> You may know this champs' ?</h3>
+    <div class="friends">
+      <% @users.each do |user| %>
+      <%  unless user === @current_user %>
+      <ul class="friend">
+        <div class="avatar">
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key  %>
+          <% else %>
+            <%= image_tag "avatardefault.png"  %>
+          <% end %>
+        </div>
+        <button class="btn follow-btn ">Follow <%= user.name %></button>
+      </ul>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
 </div>
