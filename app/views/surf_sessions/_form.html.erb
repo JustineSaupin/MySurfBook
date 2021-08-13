@@ -2,12 +2,24 @@
   <!-- <div class="row"> -->
    <!--  <div class="col-xs-1">
  -->
-      <%= simple_form_for(surf_session) do |f| %>
-     <!-- how to access to current user name ??
+ <!-- how to access to current user name ??
       < @current_user.name.capitalize %> - -->
       <!--  how to access to current user name ??
         < @surf_sessions.count +1 %> - -->
-        <h3> Session number </h3>
+         <h3>
+         <% if @current_user.name? %>
+          <%= @current_user.name.capitalize %>
+          <% else %>
+          <%= @current_user.email %>
+          <% end %>
+
+          - It's your session number
+          </h3>
+
+
+
+      <%= simple_form_for(surf_session) do |f| %>
+
         <%= f.input :spot, label:"Spot" %>
         <%= f.input :wind, label:"Wind direction" %>
         <%= f.input :wave, label:"Waves" %>
