@@ -37,7 +37,7 @@ class SurfSessionsController < ApplicationController
 
   def destroy
     @surf_session.destroy
-    redirect_to surf_sessions_path
+    redirect_to surf_sessions_path(@surf_session)
   end
 
   private
