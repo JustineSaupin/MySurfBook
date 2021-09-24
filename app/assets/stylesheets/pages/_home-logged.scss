@@ -8,7 +8,13 @@
   background-size: cover;
   font-size: 2em;
   margin: 0;
-  height: 230px;
+  min-height: 400px;
+  @media(min-width: 700px){
+  min-height: 600px;
+  }
+  @media(max-width: 450px){
+  min-height: 250px;
+  }
 }
 
 .home-banner h1 span {
@@ -32,13 +38,17 @@
   color: $myblue;
 }
 
-.session-card {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  list-style-type: none;
-  padding-top: 10px;
+.session-cards {
+  max-width: 500px;
+
+  .session-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    padding-top: 10px;
+  }
 }
 
 .index-photo img {

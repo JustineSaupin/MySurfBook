@@ -9,9 +9,11 @@
   text-shadow: 1px 0px 2px #BFB39B;
 }
 
+
 .home-presentation {
   text-align: center;
-  padding: 22px;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 .form-inputs {
@@ -20,6 +22,8 @@ text-align: center;
 
 .sign-form {
   padding: 22px;
+  max-width:400px;
+  margin: 0 auto;
 }
 
 .btn {
