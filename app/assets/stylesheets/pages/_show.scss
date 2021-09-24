@@ -108,7 +108,7 @@
 
 .buttons {
   display: flex;
-  flex-direction: wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
 }
@@ -116,10 +116,11 @@
 .buttons button {
   background-color: $mygreen;
   opacity: 0.6;
-  border-radius: 14px;
+  border-radius: 5px;
   border-style: none;
-  padding: 2px 8px;
+  padding: 3px 10px;
   box-shadow: 0px 1px 3px #1e405c;
+  margin: 3px;
 }
 
 .buttons a {
