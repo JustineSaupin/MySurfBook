@@ -4,17 +4,20 @@
   <% end %>
 
   <div class="nav-action">
-    <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
-      <%= image_tag "add.png", data: { turbolinks: false } %>
-    <% end %>
+
+    <!--  SUR TOUTES PAGES -->
+
 
    <!--  SI PAGE ACTUEL == INDEX -> LOGO menu-->
-    <%if current_page?(root_path) %>
-    <%= image_tag "menu.png", class: "nav-menu" %>
-
-    <div class="show-menu">
-      <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
-    </div>
+    <%if current_page?(root_path) || current_page?(surf_sessions_path) %>
+      <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
+        <%= image_tag "add.png", data: { turbolinks: false } %>
+      <% end %>
+      <%= image_tag "menu.png", class: "nav-menu" %>
+        <div class="show-menu show-click">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
+          <%= link_to "My profile", edit_user_registration_path, method: :get  %>
+        </div>
 
 
     <!--  SI PAGE ACTUEL == NEW -> LOGO back-->
@@ -24,9 +27,12 @@
       <% end %>
 
     <!--  SINON PAGE ACTUEL == SHOW -> LOGO share + insertion FB et WA-->
-    <% else %>
+    <% elsif current_page?(surf_session_path(@surf_session)) %>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "back.png" %>
+      <% end %>
       <%= image_tag "share.png", class: "nav-share" %>
-      <div class="share-menu">
+      <div class="share-menu show-click">
         <div class="share">
           <div class="fb-share-button" data-href= "<%= request.url  %>" data-layout="button" data-size="large">
             <a target="_blank"
@@ -37,12 +43,7 @@
         </div>
       </div>
 
-
-
-<% end %>
-
-
-
+    <% end %>
 
   </div>
 </div>

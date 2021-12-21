@@ -50,8 +50,8 @@
 
 
   <div class="buttons">
-    <button><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %> </button>
-    <button><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
-    <button> <%= link_to "Back to your sessions", surf_sessions_path %></button>
+    <button class="btn-flat"><%= link_to "Edit", edit_surf_session_path(@surf_session), data: { turbolinks: false } %> </button>
+    <button class="btn-flat"><%= link_to "Delete", @surf_session, method: :delete, data: { confirm: "Are you sure ?" } %></button>
+
   </div>
 </div>
