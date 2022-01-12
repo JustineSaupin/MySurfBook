@@ -1,6 +1,7 @@
 class SurfSessionsController < ApplicationController
   before_action :set_surf_session, except: [:index, :new, :create]
   before_action :set_user
+  require 'date'
 
   def index
     @surf_sessions = SurfSession.where(user_id: @user)
