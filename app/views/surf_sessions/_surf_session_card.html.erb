@@ -2,6 +2,8 @@
   <div class="index-photo">
     <% if surf_session.photos.any? %>
       <%= cl_image_tag surf_session.photos.first.key  %>
+      <% else %>
+      <%= image_tag "chargepic.png"  %>
     <% end %>
   </div>
   <div class="index-session">

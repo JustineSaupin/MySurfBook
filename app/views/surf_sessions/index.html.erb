@@ -12,6 +12,6 @@
     <% @last_surf_sessions.each do |surf_session| %>
       <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
     <% end %>
-    <%= link_to "View all", archives_path %>
+    <%= link_to "View all", archives_path, class: "btn" %>
   </div>
 </div>
