@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def tide(surf_session_tide)
     case surf_session_tide
     when "high-tide"

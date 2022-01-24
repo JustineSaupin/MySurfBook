@@ -1,4 +1,5 @@
 class SurfSessionsController < ApplicationController
+  include Pagy::Backend
   before_action :set_surf_session, except: [:index, :archives, :new, :create]
   before_action :set_user
   before_action :set_all_surf_sessions, only: [:index, :archives]
@@ -12,8 +13,9 @@ class SurfSessionsController < ApplicationController
   end
 
   def archives
+    @pagy, @archived_surf_sessions = pagy(@surf_sessions, items: 2)
     @navbar_style = :logo_menu
-    @archived_surf_sessions = @surf_sessions.from_year(Time.now)
+
   end
 
   def show

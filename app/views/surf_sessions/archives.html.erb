@@ -2,10 +2,10 @@
     <h2>Archives</h2>
 </div>
 
-<div class= "session-cards">
+<div class= "session-cards" data-controller="hello">
   <span><%= Time.now.strftime("%Y") %> sessions</span>
   <% @archived_surf_sessions.each do |surf_session| %>
     <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
   <% end %>
-  <%= button_tag "See #{(Time.now - 1.year).year} sessions"  %>
+  <%== pagy_nav(@pagy) %>
 </div>
