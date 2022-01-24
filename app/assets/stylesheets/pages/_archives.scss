@@ -1,8 +1,19 @@
+.archives-container {
+  padding: 32px 32px 120px 32px;
+  background-color: $mybeige;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
   font-family: "Work Sans", "Helvetica", "sans-serif";
   align-content: center;
-  align-items: stretch;
+  align-items: flex-start;
+
+  h3 {
+    color: $myblue;
+    font-size: 1.1rem !important;
+  }
 }
+

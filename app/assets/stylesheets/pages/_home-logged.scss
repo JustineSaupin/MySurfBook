@@ -1,5 +1,5 @@
 .home-logged {
-  padding-bottom: 120px;
+  padding: 32px 32px 120px 32px;
   background-color: $mybeige;
 }
 
@@ -46,7 +46,6 @@
 .session-cards {
   max-width: 500px;
   margin: 0 auto;
-  padding: 0 18px;
 
   .session-card {
     display: flex;
@@ -79,6 +78,6 @@
 }
 
 .view-btn {
-  margin-top: 50px;
+  margin-top: 32px;
 }
 

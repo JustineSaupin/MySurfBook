@@ -1,13 +1,15 @@
-<div class="home-title">
-    <h2>Archives</h2>
-</div>
-
-<div class= "session-cards" data-controller="hello">
-  <div class="pagination">
-    <span><%= Time.now.strftime("%Y") %> sessions</span>
-    <span><%== pagy_nav(@pagy) %></span>
+<div class="archives-container">
+  <div class="home-title">
+      <h2>Archives</h2>
   </div>
-  <% @archived_surf_sessions.each do |surf_session| %>
-    <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
-  <% end %>
+
+  <div class= "session-cards" data-controller="hello">
+    <div class="pagination">
+      <h3>Previous sessions</h3>
+      <h3><%== pagy_nav(@pagy) %></h3>
+    </div>
+    <% @archived_surf_sessions.each do |surf_session| %>
+      <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
+    <% end %>
+  </div>
 </div>
