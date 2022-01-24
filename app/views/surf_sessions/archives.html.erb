@@ -7,5 +7,7 @@
   <% @archived_surf_sessions.each do |surf_session| %>
     <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
   <% end %>
-  <%== pagy_nav(@pagy) %>
+  <div class="pagination">
+    <%== pagy_nav(@pagy) %>
+  </div>
 </div>

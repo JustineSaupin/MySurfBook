@@ -33,6 +33,11 @@
   text-shadow: 1px 0px 2px #bfb39b;
 }
 
+.home-title-no-session h2 {
+  padding: 70px 0px 0px 35px;
+  color: $myblue;
+}
+
 .home-title h3 {
   font-size: 1.25rem !important;
   color: $myblue;
@@ -73,7 +78,8 @@
   font-size: 1,2em;
 }
 
-
-.archive-session-cards {
-  display: none !important;
+.view-btn {
+  width: 60%;
+  margin: 50px 25% 0 25%;
 }
+
