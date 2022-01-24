@@ -7,7 +7,7 @@
       <!--  how to access to current user name ??
         < @surf_sessions.count +1 %> - -->
          <h3>
-         <% if @current_user.name? %>
+         <% if @current_user.name %>
           <%= @current_user.name.capitalize %>
           <% else %>
           <%= @current_user.email %>
