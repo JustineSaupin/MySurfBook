@@ -13,7 +13,7 @@ class SurfSessionsController < ApplicationController
   end
 
   def archives
-    @pagy, @archived_surf_sessions = pagy(@surf_sessions, items: 2)
+    @pagy, @archived_surf_sessions = pagy(@surf_sessions, items: 10)
     @navbar_style = :logo_menu
 
   end

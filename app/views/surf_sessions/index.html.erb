@@ -3,7 +3,7 @@
 </div>
   <div class="home-logged">
     <div class="home-title-no-session">
-      <% if @current_year_surf_sessions.size == 0 %>
+      <% if @surf_sessions.size == 0 %>
         <h2>Start here &#x2935;  </h2>
         <%= link_to "Add my first session !", new_surf_session_path, class: "btn view-btn" %>
     </div>
