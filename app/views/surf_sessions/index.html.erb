@@ -1,17 +1,23 @@
 <div class="home-banner">
     <h1>MYSURF<span>LOG</span></h1>
 </div>
+  <div class="home-logged">
+    <div class="home-title-no-session">
+      <% if @current_year_surf_sessions.size == 0 %>
+        <h2>Start here &#x2935;  </h2>
+        <%= link_to "Add my first session !", new_surf_session_path, class: "btn view-btn" %>
+    </div>
+    <div class="home-title">
+      <% else %>
+        <h2><%= Time.now.strftime("%Y") %>, <%= @current_year_surf_sessions.size %> sessions so far</h2>
+        <h3>and you surfed <%= @spots_count  %> different spots!</h3>
+    </div>
 
-<div class="home-logged">
-  <div class="home-title">
-    <h2><%= Time.now.strftime("%Y") %>, <%= @current_year_surf_sessions.size %> sessions so far</h2>
-    <h3>and you surfed <%= @spots_count  %> different spots!</h3>
-  </div>
-
-  <div class= "session-cards">
-    <% @last_surf_sessions.each do |surf_session| %>
-      <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
+    <div class= "session-cards">
+      <% @last_surf_sessions.each do |surf_session| %>
+        <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
+      <% end %>
+      <%= link_to "View all", archives_path, class: "btn view-btn" %>
     <% end %>
-    <%= link_to "View all", archives_path %>
+    </div>
   </div>
-</div>
