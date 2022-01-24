@@ -3,11 +3,11 @@
 </div>
 
 <div class= "session-cards" data-controller="hello">
-  <span><%= Time.now.strftime("%Y") %> sessions</span>
+  <div class="pagination">
+    <span><%= Time.now.strftime("%Y") %> sessions</span>
+    <span><%== pagy_nav(@pagy) %></span>
+  </div>
   <% @archived_surf_sessions.each do |surf_session| %>
     <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
   <% end %>
-  <div class="pagination">
-    <%== pagy_nav(@pagy) %>
-  </div>
 </div>
