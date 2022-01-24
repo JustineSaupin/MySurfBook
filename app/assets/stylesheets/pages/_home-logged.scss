@@ -73,60 +73,7 @@
   font-size: 1,2em;
 }
 
-.follow-friends {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: center;
-  align-items: center;
-  padding-top: 80px;
+
+.archive-session-cards {
+  display: none !important;
 }
-
-.follow-friends h3 {
-  font-size: 1.25rem !important;
-  color: $myblue;
-}
-
-.friends {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.friend {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-// .session-cards .all-btn {
-//   display: flex;
-//   justify-content: center;
-//   align-content: center;
-// }
-
-// .all-btn button {
-//   background-color: $mygreen;
-//   opacity: 0.6;
-//   border-radius: 5px;
-//   border-style: none;
-//   padding: 3px 10px;
-//   box-shadow: 0px 1px 3px #1e405c;
-//   margin: 3px;
-// }
-
-// .all-btn a {
-//   color: white !important;
-//   text-decoration: none !important;
-
-// }
-
-// .all-btn button:hover {
-//   background-color: $mygreen;
-//   opacity: 1;
-// }

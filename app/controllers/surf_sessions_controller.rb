@@ -1,17 +1,26 @@
 class SurfSessionsController < ApplicationController
-  before_action :set_surf_session, except: [:index, :new, :create]
+  before_action :set_surf_session, except: [:index, :archives, :new, :create]
   before_action :set_user
-  require 'date'
+  before_action :set_all_surf_sessions, only: [:index, :archives]
 
   def index
-    @surf_sessions = SurfSession.where(user_id: @user)
+    @navbar_style = :logo_menu
+    @current_year_surf_sessions = @surf_sessions.from_year(Time.now)
+    @last_surf_sessions = @current_year_surf_sessions.first(3)
+    @spots_count = @current_year_surf_sessions.pluck(:spot).uniq.size
     @users = User.all
+  end
+
+  def archives
+    @navbar_style = :logo_menu
+    @archived_surf_sessions = @surf_sessions.from_year(Time.now)
   end
 
   def show
   end
 
   def new
+    @navbar_style = :logo_back
     @surf_session = SurfSession.new
   end
 
@@ -53,5 +62,9 @@ class SurfSessionsController < ApplicationController
 
   def ss_params
     params.require(:surf_session).permit(:title, :spot, :description, :date, :spot_type, :tide, :wave, :wind, :rating, photos: [])
+  end
+
+  def set_all_surf_sessions
+    @surf_sessions = SurfSession.where(user_id: @user).order('date DESC')
   end
 end

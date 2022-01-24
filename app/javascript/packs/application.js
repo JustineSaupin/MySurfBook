@@ -49,3 +49,7 @@ import 'swiper/swiper-bundle.min.css'
 
 // navbar
 import { navbar } from '../plugins/navbar';
+
+
+// index
+import { home } from '../plugins/home';

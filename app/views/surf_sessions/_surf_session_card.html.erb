@@ -1,0 +1,12 @@
+<div class="session-card">
+  <div class="index-photo">
+    <% if surf_session.photos.any? %>
+      <%= cl_image_tag surf_session.photos.first.key  %>
+    <% end %>
+  </div>
+  <div class="index-session">
+    <%= link_to surf_session.spot, surf_session_path(surf_session)%>
+    <%= link_to surf_session.date.strftime("%d %B %Y"), surf_session_path(surf_session) %>
+    <%= link_to (image_tag "trash.png", width:"20px"), surf_session_path(surf_session), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
