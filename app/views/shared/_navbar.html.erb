@@ -5,23 +5,22 @@
 
   <div class="nav-action">
 
-    <!--  SUR TOUTES PAGES -->
+  <!--  SUR TOUTES PAGES -->
 
 
    <!--  SI PAGE ACTUEL == INDEX -> LOGO menu-->
-    <%if current_page?(root_path) || current_page?(surf_sessions_path) %>
+    <% if @navbar_style == :logo_menu %>
       <%= link_to new_surf_session_path, class: "icon navbar-brand action-icon" do %>
         <%= image_tag "add.png", data: { turbolinks: false } %>
       <% end %>
       <%= image_tag "menu.png", class: "nav-menu" %>
-        <div class="show-menu show-click">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
-          <%= link_to "My profile", edit_user_registration_path, method: :get  %>
-        </div>
-
+      <div class="show-menu show-click">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
+        <%= link_to "My profile", edit_user_registration_path, method: :get  %>
+      </div>
 
     <!--  SI PAGE ACTUEL == NEW -> LOGO back-->
-    <% elsif current_page?(new_surf_session_path) %>
+    <% elsif @navbar_style == :logo_back %>
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "back.png" %>
       <% end %>

@@ -4,52 +4,14 @@
 
 <div class="home-logged">
   <div class="home-title">
-    <h2><%=Time.now.strftime("%Y")%>, <%= @surf_sessions.length %> sessions so far</h2>
-    <h3>and you surfed  <%= @surf_sessions.distinct.pluck(:spot).count  %> different spots!</h3>
+    <h2><%= Time.now.strftime("%Y") %>, <%= @current_year_surf_sessions.size %> sessions so far</h2>
+    <h3>and you surfed <%= @spots_count  %> different spots!</h3>
   </div>
-
 
   <div class= "session-cards">
-     <% @surf_sessions.reverse.first(3).each do |surf_session| %>
-      <div class="session-card">
-        <div class="index-photo">
-          <% if surf_session.photos.any? %>
-            <%= cl_image_tag surf_session.photos.first.key  %>
-          <% end %>
-        </div>
-        <div class="index-session">
-          <%= link_to surf_session.spot, surf_session_path(surf_session)%>
-          <%= link_to surf_session.date.strftime("%d/%m"), surf_session_path(surf_session) %>
-          <%= link_to (image_tag "trash.png", width:"20px"), surf_session_path(surf_session), method: :delete, data: { confirm: "Are you sure?" } %>
-        </div>
-      </div>
+    <% @last_surf_sessions.each do |surf_session| %>
+      <%= render "surf_sessions/surf_session_card", surf_session: surf_session  %>
     <% end %>
-
-    <button class="all-btn">View all</button>
-
-    <div class= "archive session-cards">
-       <% @surf_sessions.reverse.each do |surf_session| %>
-        <div class="session-card">
-          <div class="index-photo">
-            <% if surf_session.photos.any? %>
-              <%= cl_image_tag surf_session.photos.first.key  %>
-            <% end %>
-          </div>
-          <div class="index-session">
-            <%= link_to surf_session.spot, surf_session_path(surf_session)%>
-            <%= link_to surf_session.date.strftime("%d/%m"), surf_session_path(surf_session) %>
-            <%= link_to (image_tag "trash.png", width:"20px"), surf_session_path(surf_session), method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= link_to "View all", archives_path %>
   </div>
-
-
-
-
-
-    </div>
-  </div>
-
 </div>
